@@ -4,11 +4,45 @@ import { createRoot } from "react-dom/client"
 import "./index.css"
 import App from "./App.tsx"
 import { ThemeProvider } from "@/components/theme-provider.tsx"
+import { MainLayout } from "./layout/mainLayout.tsx"
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
+import Home from "./pages/home.tsx"
+import Portfolio from "./pages/Portfolio.tsx"
+import Insight from "./pages/Insight.tsx"
+
+const router = createBrowserRouter([
+  {
+    element: <App />,
+    children: [
+      {
+        element: <MainLayout />,
+        children: [
+          {
+            path: "/",
+            element: <Navigate to="/home" replace />,
+          },
+          {
+            path: "/home",
+            element: <Home />,
+          },
+          {
+            path: "/portfolio",
+            element: <Portfolio />,
+          },
+          {
+            path: "/insight",
+            element: <Insight />,
+          },
+        ],
+      },
+    ],
+  },
+])
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider>
-      <App />
+      <RouterProvider router={router} />
     </ThemeProvider>
   </StrictMode>
 )
