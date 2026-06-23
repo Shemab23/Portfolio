@@ -7,7 +7,6 @@ import { ThemeProvider } from "@/components/theme-provider.tsx"
 import { MainLayout } from "./layout/mainLayout.tsx"
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom"
 import Home from "./pages/home.tsx"
-import Portfolio from "./pages/Portfolio.tsx"
 import Insight from "./pages/Insight.tsx"
 
 const router = createBrowserRouter([
@@ -24,10 +23,6 @@ const router = createBrowserRouter([
           {
             path: "/home",
             element: <Home />,
-          },
-          {
-            path: "/portfolio",
-            element: <Portfolio />,
           },
           {
             path: "/insight",

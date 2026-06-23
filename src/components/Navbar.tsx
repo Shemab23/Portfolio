@@ -9,11 +9,6 @@ const tabs = [
     path: "/home",
   },
   {
-    name: "portfolio",
-    label: "Portfolio",
-    path: "/portfolio",
-  },
-  {
     name: "insight",
     label: "Insight",
     path: "/insight",
@@ -29,7 +24,7 @@ export const Navbar = () => {
     setTab(t.name)
   }
   return (
-    <div className="sticky top-0 z-50 flex w-full items-center justify-between self-center bg-accent/80 px-2 py-2 text-txt sm:px-10">
+    <div className="gte sticky top-0 z-50 flex w-full items-center justify-between self-center bg-accent/80 px-2 py-2 text-txt sm:px-10">
       <div className="flex items-center gap-2">
         <img src={logo} alt="logo" className="h-8 w-8 md:h-12 md:w-12" />
         <h1 className="text-xl font-bold text-gold">BRUNO SHEMA</h1>
